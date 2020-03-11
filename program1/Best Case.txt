@@ -1,0 +1,19 @@
+#XOR of elements from Li to Ri
+a=list(map(int,input().split()))
+q=[]
+# Scanning 2-dimensional array
+n=int(input())
+for i in range(n):
+    q.append(list(map(int,input().split())))
+#Finding cumulative xor array
+for i in range(1,len(a)):
+    a[i]^=a[i-1]
+for i in range(n):
+    for j in range(len(q[i])-1):
+        if(q[i][j]!=0 or q[i][j]==q[i][j+1]):
+            print((a[q[i][j+1]])^(a[q[i][j]-1]),end=" ")#if [1,2] the line computes a[2]^a[1-1] i.e a[2]^a[0]
+        else:
+            print(a[q[i][j+1]],end=" ")#if [0,3] directly prints a[3]
+        
+    
+    
