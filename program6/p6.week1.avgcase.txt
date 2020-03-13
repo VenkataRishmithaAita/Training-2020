@@ -1,0 +1,5 @@
+def singleoccurence(arr):
+    return (3*sum(set(arr))-sum(arr))/2
+    
+a=list(map(int,input().split()))
+print(int(singleoccurence(a)))

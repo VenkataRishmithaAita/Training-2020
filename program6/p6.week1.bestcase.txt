@@ -1,0 +1,12 @@
+def singleoccurence(arr):
+    temp1=0
+    temp2=0
+    for i in range(len(arr)):
+        temp2=temp2|(temp1&arr[i])
+        temp1=temp1^arr[i]
+        remove_bits=~(temp1&temp2)
+        temp1&=remove_bits
+        temp2&=remove_bits
+    return temp1
+arr=list(map(int,input().split()))
+print(singleoccurence(arr))
