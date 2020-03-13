@@ -1,0 +1,12 @@
+TestCase1:-
+input1:1000
+output:12
+-------------
+TestCase2:-
+input1:15000
+output:19
+-------------
+TestCase3:-
+input1:32767
+output:16
+

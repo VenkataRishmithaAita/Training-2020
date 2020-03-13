@@ -1,0 +1,35 @@
+count=0
+def ntoone(n):
+    global count
+    if n==0:
+        return -1
+    if n==1:
+        return count  
+    elif n%2==0:
+        count+=1
+        return ntoone(n//2)   
+    else:
+        x=n+1
+        y=n-1
+        if x%4==0:#if the number while performing n+1 is double time divible by 2 it is the best path
+            count+=1
+            return ntoone(n+1)
+        elif y%4==0:
+            count+=1
+            return ntoone(n-1) 
+        elif x<y:#if not double time divisible by 2 proceed through the path which has less value
+            count+=1
+            return ntoone(n+1)
+        else:
+            count+=1
+            return ntoone(n-1) 
+
+
+input1=int(input())
+x=ntoone(input1)
+print(x)
+Explanatio:
+1000->500->250->125has 2 paths 126 or 124 we choose 124 as it is double time divisble by 2 so, 125->124->62->31 again 
+has two paths 32 or 30 we choose 32 as it is double time divisible by 2 so, 31->32->16->8->4->2->1
+1000->500->250->125->124->62->31->32->16->8->4->2->1
+Count=12
